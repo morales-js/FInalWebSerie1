@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Atención Ciudadana</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div>
+        <strong>Municipalidad</strong>
+        <small>Portal público de atención ciudadana</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <section class="card">
+      <!-- Formulario -->
+      <div id="vista-form">
+        <h1>Ingresar queja o reporte</h1>
+        <p class="sub">Describa su queja y adjunte una fotografía relacionada.</p>
+
+        <div id="alerta" class="alert alert-error hidden" role="alert"></div>
+
+        <form id="form" novalidate>
+          <div class="field" id="f-descripcion">
+            <label for="descripcion">Queja o reporte</label>
+            <textarea id="descripcion" placeholder="Escriba aquí su queja o reporte"></textarea>
+            <span class="error"></span>
+          </div>
+
+          <div class="field" id="f-foto">
+            <label for="foto">Fotografía</label>
+            <div class="dropzone" id="dropzone" tabindex="0" role="button">
+              <strong>Haga clic o arrastre una imagen aquí</strong>
+            </div>
+            <input type="file" id="foto" accept="image/*" class="hidden">
+            <div class="preview hidden" id="preview">
+              <img id="preview-img" alt="Vista previa de la fotografía">
+              <span id="preview-nombre"></span>
+              <button type="button" class="btn btn-ghost btn-sm" id="quitar">Quitar</button>
+            </div>
+            <span class="error"></span>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Confirmación -->
+      <div id="vista-ok" class="confirm hidden">
+        <div class="icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h2>Su queja fue registrada</h2>
+        <p>La información fue enviada correctamente a la Municipalidad.</p>
+        <div class="num" id="ok-numero"></div>
+        <button type="button" class="btn btn-primary" id="nuevo">Ingresar otra queja</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/portal.js"></script>
+</body>
+</html>

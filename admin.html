@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de Administración Municipal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div>
+        <strong>Municipalidad</strong>
+        <small>Panel de Administración Municipal</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="panel-head">
+      <div>
+        <h1>Quejas y reportes registrados</h1>
+        <p id="total">Cargando…</p>
+      </div>
+      <button type="button" class="btn btn-primary btn-sm" id="actualizar">Actualizar</button>
+    </div>
+
+    <div id="alerta" class="alert alert-error hidden" role="alert"></div>
+    <div class="grid" id="lista"></div>
+  </main>
+
+  <!-- Detalle -->
+  <div class="modal-bg hidden" id="detalle" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-head">
+        <strong id="d-titulo"></strong>
+        <button type="button" class="btn btn-ghost btn-sm" id="cerrar">Cerrar</button>
+      </div>
+      <div class="modal-body">
+        <img id="d-foto" alt="Fotografía asociada a la queja">
+        <h3>Descripción original</h3>
+        <p class="texto" id="d-descripcion"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
